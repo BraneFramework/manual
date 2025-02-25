@@ -1,0 +1,12 @@
+[book]
+authors = ["Lut99", "Daniel Voogsgerd"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Brane: The Manual"
+
+[output.html]
+default-theme = "navy"
+site-url = "/manual/"
+git-repository-url = "https://github.com/braneframework/manual"
+git-repository-icon = "fa-github"

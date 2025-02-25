@@ -1,4 +1,0 @@
-name: colours
-access:
-  kind: file
-  path: ./colours.csv
