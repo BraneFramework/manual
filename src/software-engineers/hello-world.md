@@ -3,7 +3,7 @@ In this chapter, we will guide you through creating the simplest and most basic 
 
 This tutorial assumes that you have experience with programming. In particular, it's useful to known about [standard streams](https://en.wikipedia.org/wiki/Standard_streams) and [environment variables](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa).
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/hello-world` of the [repository](https://github.com/epi-project/brane).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/hello-world` of the [repository](https://github.com/BraneFramework/brane).
 
 
 ## 1. Writing the code
@@ -159,7 +159,7 @@ If everything went alright, you should see the `Hello, world!` message if you hi
 
 <img src="../assets/img/hello-world-test-2.png" alt="Hello, world!" width=650/>
 
-This confirms that your package is working and Brane can interact with it! If it doesn't, you'll see an error that hopefully allows you to debug your package. You can check the [troubleshooting](./troubleshooting.md) chapter with some general tips on how to debug any such errors.
+This confirms that your package is working and Brane can interact with it! If it doesn't, you'll see an error that hopefully allows you to debug your package. You can check the [troubleshooting](TODO) chapter with some general tips on how to debug any such errors.
 
 If everything checks out, you are now ready to push your package to a Brane instance.
 

@@ -10,3 +10,7 @@ default-theme = "navy"
 site-url = "/manual/"
 git-repository-url = "https://github.com/braneframework/manual"
 git-repository-icon = "fa-github"
+
+[preprocessor.variables.variables]
+specification_root = "https://braneframework.github.io/specification"
+brane_docs_root = "https://braneframework.github.io/brane/unstable"

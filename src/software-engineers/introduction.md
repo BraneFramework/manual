@@ -13,7 +13,7 @@ That means that the bulk of the work will be done in these external function cal
 
 Technically, these packages are implemented as containers, which means that they might be written in any language (as long as they adhere to the protocol Brane uses to communicate with packages) and will ship together with all required dependencies.
 
-As a consequence, this means that Brane package calls are, in principle, always completely self-contained. After execution, the container is destroyed, removing any work that the package has done. The only way to retrieve results is by either sending them back to the workflow-space directly as a return value (which can contain limited data), or by returning so-called _datasets_ or _intermediate results_ (see the [scientist chapters](../scientists/data.md) for more background information, or the software engineer's [data chapter](./data.md) for practical usage).
+As a consequence, this means that Brane package calls are, in principle, always completely self-contained. After execution, the container is destroyed, removing any work that the package has done. The only way to retrieve results is by either sending them back to the workflow-space directly as a return value (which can contain limited data), or by returning so-called _datasets_ or _intermediate results_ (see the [scientist chapters](../scientists/bscript/datasets.md) for more background information, or the software engineer's [data chapter](./data.md) for practical usage).
 
 
 ## Next

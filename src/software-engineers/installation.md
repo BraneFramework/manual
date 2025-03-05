@@ -39,13 +39,13 @@ You can either download the binary directly from the repository, or build the to
 To download the Brane CLI binary, use the following commands:
 ```bash
 # For Linux
-sudo wget -O /usr/local/bin/brane https://github.com/epi-project/brane/releases/latest/download/brane-linux-x86_64
+sudo wget -O /usr/local/bin/brane https://github.com/BraneFramework/brane/releases/latest/download/brane-linux-x86_64
 
 # For macOS (Intel)
-sudo wget -O /usr/local/bin/brane https://github.com/epi-project/brane/releases/latest/download/brane-darwin-x86_64
+sudo wget -O /usr/local/bin/brane https://github.com/BraneFramework/brane/releases/latest/download/brane-darwin-x86_64
 
 # For macOS (M1/M2)
-sudo wget -O /usr/local/bin/brane https://github.com/epi-project/brane/releases/latest/download/brane-darwin-aarch64
+sudo wget -O /usr/local/bin/brane https://github.com/BraneFramework/brane/releases/latest/download/brane-darwin-aarch64
 ```
 These commands download the latest Brane CLI binary for your OS, and store them in `/usr/local/bin` (which is why the command requires `sudo`). You may install the binary anywhere you like, but don't forget to add the binary to your PATH if you choose a location that is not part of it already.
 
@@ -53,7 +53,7 @@ These commands download the latest Brane CLI binary for your OS, and store them 
 ### Compiling the binary
 You may also compile the binary from source if you need the cutting-edge latest version or are running a system that doesn't have any default binary available.
 
-To compile the binary, refer to the [compilation instructions](/specification/development/compilation.html) over at the [Brane: A Specification](/specification)-book for instructions.
+To compile the binary, refer to the [compilation instructions]({{ specification_root }}/development/compilation.html) over at the [Brane: A Specification]({{ specification_root }})-book for instructions.
 
 
 ## Next

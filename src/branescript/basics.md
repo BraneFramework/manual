@@ -1,5 +1,5 @@
 # Basic concepts
-In the [previous chapter](./workflow.md), we discussed your first "Hello, world!"-workflow. In this chapter, we will extend upon this, and go over the basic language features of BraneScript. We will talk about things like variables, if-statements and loops, parallel statements and builtin-functions.
+In the [previous chapter](./hello-world.md), we discussed your first "Hello, world!"-workflow. In this chapter, we will extend upon this, and go over the basic language features of BraneScript. We will talk about things like variables, if-statements and loops, parallel statements and builtin-functions.
 
 More complex features, such as arrays, function definitions, classes or Data and IntermediateResults, are left to the next few chapters.
 
@@ -17,7 +17,7 @@ So, how can we use this? The first step is to declare a new variable, to make Br
 ```bscript
 let <ID> := <EXPR>;
 ```
-where `<ID>` is some identifier that you want to use for your variable (existing only of alphanumeric characters and an underscore, `_`), and `<EXPR>` is some code that _evaluates_ to a certain value. We've already seen an example of this: a function call is an expression, since it has a return value that we can pass to other functions or statements. Other expressions include _literal values_ (e.g., `true`, `42`, `3.14` or `"Hello, there!"`) or logical or mathmatical operations (e.g., addition, subtraction, logical conjunction, comparison, etc). For some more examples, see [below](#arrays), or check the [BraneScript documentation](../../branescript/expressions.md) for a full overview.
+where `<ID>` is some identifier that you want to use for your variable (existing only of alphanumeric characters and an underscore, `_`), and `<EXPR>` is some code that _evaluates_ to a certain value. We've already seen an example of this: a function call is an expression, since it has a return value that we can pass to other functions or statements. Other expressions include _literal values_ (e.g., `true`, `42`, `3.14` or `"Hello, there!"`) or logical or mathmatical operations (e.g., addition, subtraction, logical conjunction, comparison, etc). For some more examples, see [below](#arrays), or check the [BraneScript documentation]({{ specification_root }}/appendix/languages/bscript/features.html#expressions) for a full overview.
 
 Yet another example of an expression is a _variable reference_, which effectively reads a particular variable. To use it, simply specify the identifier of the variable you declared (`ID`) any time you can use an expression. For example:
 ```bscript
@@ -57,7 +57,7 @@ foo := foo * 2;
 
 
 ## Functions
-Something that you've already seen used in the [previous chapter](./workflow.md) and the previous section, is the use of _function calls_.
+Something that you've already seen used in the [previous chapter](./hello-world.md) and the previous section, is the use of _function calls_.
 
 This concept is used in almost any language, and essentially represents a temporary jump to some other part of code that is executed, and then the program continues from the function call onwards. Crucially, we typically allow these snippets to take in some values - _arguments_ - and hand us back a value when they are done - a _return value_.
 
@@ -82,14 +82,14 @@ let fourty_two := add(add(add(2, add(zero(), 20)), zero()), 20);
 println(fourty_two);   // Should print '42'
 ```
 
-Note that BraneScript uses the same syntax for calling imported functions (see the [previous chapter](./workflow.md) with the `hello_world()`-function), builtin functions (think `println()`; see [below](#builtin-functions)) and defined functions (check the [relevant chapter](./funcs-classes.md)).
+Note that BraneScript uses the same syntax for calling imported functions (see the [previous chapter](./hello-world.md) with the `hello_world()`-function), builtin functions (think `println()`; see [below](#builtin-functions)) and defined functions (check the [relevant chapter](./funcs-classes.md)).
 
 To be complete, you can import all of the functions within a package using the import-statement:
 ```bscript
 import <id>;
 ```
 
-You've already seen examples of this in the [previous chapter](./workflow.md).
+You've already seen examples of this in the [previous chapter](./hello-world.md).
 
 
 ## Control flow
@@ -336,4 +336,4 @@ If you have the idea you understand these basic constructs a little, congratulat
 
 In the [next chapter](./funcs-classes.md), we examine how to define functions and classes and how to use the latter. Then, in the [chapter after that](./data-results.md), we examine BraneScript's builtin `Data`-class, which is integral to writing useful workflows. Finally, in the [last chapter](./advanced.md) of the BraneScript-part, we discuss some of the finer details of BraneScript as a language.
 
-Separate from these introductory chapters, there is also the complete and more formal overview of the language in the [BraneScript documentation](../../branescript/introduction.md). Those chapters should cover all of its details, and function as useful reference material once you've grasped the basics.
+Separate from these introductory chapters, there is also the complete and more formal overview of the language in the [BraneScript documentation]({{ specification_root }}/appendix/languages/bscript/introduction.html). Those chapters should cover all of its details, and function as useful reference material once you've grasped the basics.

@@ -5,9 +5,9 @@ This chapter concerns itself with installing `branectl` itself. Make sure that y
 
 
 ## Precompiled binary
-In most cases, it's the easiest to download the precompiled binary from the [GitHub repository](https://github.com/epi-project/brane).
+In most cases, it's the easiest to download the precompiled binary from the [GitHub repository](https://github.com/BraneFramework/brane).
 
-To download it, you can simply go to the repository (<https://github.com/epi-project/brane>) and navigate to 'tags'. From there, you can select your desired release and choose it from among the list. Alternatively, you can also go to the latest release by clicking this link: <https://github.com/epi-project/brane/releases/latest>.
+To download it, you can simply go to the repository (<https://github.com/BraneFramework/brane>) and navigate to 'tags'. From there, you can select your desired release and choose it from among the list. Alternatively, you can also go to the latest release by clicking this link: <https://github.com/BraneFramework/brane/releases/latest>.
 
 > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Note that `branectl` was only introduced in version 1.0.0, so any version before that will not have a downloadable `branectl` executable (or any compatible one, for that matter).
 
@@ -20,13 +20,13 @@ if you are in the folder where you downloaded the tool.
 Alternatively, you can also download the latest version using `curl` from the command-line:
 ```bash
 # For Linux (x86-64)
-sudo curl -Lo /usr/local/bin/branectl https://github.com/epi-project/brane/releases/latest/download/branectl-linux-x86_64
+sudo curl -Lo /usr/local/bin/branectl https://github.com/BraneFramework/brane/releases/latest/download/branectl-linux-x86_64
 
 # For macOS (Intel)
-sudo curl -Lo /usr/local/bin/branectl https://github.com/epi-project/brane/releases/latest/download/branectl-darwin-x86_64
+sudo curl -Lo /usr/local/bin/branectl https://github.com/BraneFramework/brane/releases/latest/download/branectl-darwin-x86_64
 
 # For macOS (M1/M2)
-sudo curl -Lo /usr/local/bin/branectl https://github.com/epi-project/brane/releases/latest/download/branectl-darwin-aarch64
+sudo curl -Lo /usr/local/bin/branectl https://github.com/BraneFramework/brane/releases/latest/download/branectl-darwin-aarch64
 ```
 
 Don't forget to make the executable runnable:
@@ -38,7 +38,7 @@ sudo chmod +x /usr/local/bin/branectl
 ## Compile it yourself
 Sometimes, though, the executable provided on the repository doesn't suit your needs. This is typically the case if you need a cutting-edge version that isn't released, you have an uncommon OS or processor architecture or an incompatible GLIBC version.
 
-To compile the binary, refer to the [compilation instructions](/specification/development/compilation.html) over at the [Brane: A Specification](/specification)-book for instructions.
+To compile the binary, refer to the [compilation instructions]({{ specification_root }}/development/compilation.html) over at the [Brane: A Specification]({{ specification_root }})-book for instructions.
 
 
 ## Next

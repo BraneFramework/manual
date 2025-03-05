@@ -160,4 +160,4 @@ Note that there are a few peculiarities about parallel statements:
   println(res);
   ```
   which will print `84`.
-  > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> For a complete overview of all merge strategies, check the [BraneScript documentation](../../branescript/statements.md).
+  > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> For a complete overview of all merge strategies, check the [BraneScript documentation]({{ specification_root }}/appendix/languages/bscript/features.html#parallel-statements).
