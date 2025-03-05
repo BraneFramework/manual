@@ -25,4 +25,4 @@ In the [first chapter](./hello-world.md), we will write a simple "Hello, world!"
 ## Nexts
 You can start this series by reading the [next chapter](TODO), which will set you on your journey. It is recommended to follow the chapters in-order if it is your first time reading about BraneScript, but you can also jump between them using the sidebar on the left.
 
-Alternatively, if you are looking for more technical details on how the BraneScript language is specified, we recommend you to inspect the [specifications](/specification/branescript/introduction.md) of the language in the [Brane: A Specification](/specification) book.
+Alternatively, if you are looking for more technical details on how the BraneScript language is specified, we recommend you to inspect the [specifications]({{ specification_root }}/appendix/languages/bscript/introduction.html) of the language in the [Brane: A Specification]({{ specification_root }}) book.

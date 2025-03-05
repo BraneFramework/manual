@@ -1,7 +1,7 @@
 # Overview
 In this chapter, we will provide a brief overview of what the framework is, how it is build and what kind of features it supports.
 
-It is not, however, a complete, technical description of its implementation; for that, we recommend you read our [other book](/specification).
+It is not, however, a complete, technical description of its implementation; for that, we recommend you read our [other book]({{ specification_root }}).
 
 
 ## Brane: Programmable Orchestration of Applications and Networking

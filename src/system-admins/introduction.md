@@ -1,7 +1,7 @@
 # Introduction
 In this series of chapters, we will discuss the role of system administrators and how they may prepare their system for Brane. The chapters will talk about what the requirements are on their system and what kind of information they are expected to share with the Brane instance. Finally, we will also discuss defining datasets.
 
-To know more about the inner workings of Brane, we recommend you checkout the [Brane: A Specification](/specification) book. That details the framework's inner workings.
+To know more about the inner workings of Brane, we recommend you checkout the [Brane: A Specification]({{ specification_root }}) book. That details the framework's inner workings.
 
 
 ## Background & Terminology
@@ -19,7 +19,7 @@ The control node consists of the following few services:
 - The _registry service_ (sometimes called _central registry service_ or _API service_ for disambiguation) is the centralized version of the local registry services (see [below](#the-worker-node)). It acts as a centralized database for the framework, which provides information about which dataset is located where, which domains are participating and where to find them<small><small><small><sup><a href="../assets/img/domains-and-where-to-find-them.jpg">1</a></sub></small></small></small>, and in addition hosts a central package repository.
 - Finally, the _proxy service_ acts as a gateway between the other services and the outside world to _enable_ proxying (i.e., it does not accept proxied requests, but rather creates them). In addition, it is also the point that handles server certificates and parses client certificates for identifications.
 
-For more details, check the [specification](/specification).
+For more details, check the [specification]({{ specification_root }}).
 
 Note that, if you need any compute to happen on the central node, this cannot be done through the central node itself; instead, setup a [worker node](#the-worker-node) alongside the central node to emulate the same behaviour.
 
@@ -27,24 +27,20 @@ Note that, if you need any compute to happen on the central node, this cannot be
 ## The Worker node
 As specified, a domain typically hosts a worker node. This worker node collectively describes both a local control part of the framework, referred to as the framework _delegate_, and some computing backend that actually executes the jobs. In this section, we provide a brief overview of both.
 
-The _delegate_ itself consists of a few services. Their exact working is detailled in the [specification](/specification), but as a brief overview:
+The _delegate_ itself consists of a few services. Their exact working is detailled in the [specification]({{ specification_root }}), but as a brief overview:
 - The _delegate service_ is the main service on the delegate, and takes incoming job requests and will attempt to schedule them. This is also the service that directly connects to the compute backend (see below). You can think of it as a local driver service.
 - The _registry service_ (sometimes called _local registry service_ for disambiguation) keeps track of the locally available datasets and intermediate results (see the [data tutorial](../software-engineers/data.md) for Software Engineers or the [data tutorial](../scientists/bscript/datasets.md) for Scientists for more information) and acts as a point from where the rest of the framework downloads them.
-- The _checker service_ acts as the Policy Enforcement Point (PEP) for the framework. It hosts a [reasoner](https://github.com/epi-project/policy-reasoner), typically eFLINT, and is queried by both the delegate and registry services to see if operations are allowed.
+- The _checker service_ acts as the Policy Enforcement Point (PEP) for the framework. It hosts a [reasoner](https://github.com/BraneFramework/policy-reasoner), typically eFLINT, and is queried by both the delegate and registry services to see if operations are allowed.
 - Finally, the local node also has _proxy service_, just like the [central node](#the-central-node).
 
 As for the compute backend, Brane is designed to connect to different types. An overview:
 {{#include ./backends/overview.md}}
 
-More information on each backend and how to set it up is discussed in the [backends chapter(s)](./backends/introduction.md).
-
 
 ## Next
 To start setting up your own worker node, we recommend checking out the [installation chapters](./installation/introduction.md). These will walk you through everything you need to setup a node, both control nodes and worker nodes.
 
-For information on setting up different backends, check the [backend chapters](./backends/introduction.md).
-
-Alternatively, if you are looking for extensive documentation on the Brane configuration files relevant to a worker node, checkout the [documentation chapters](./docs/overview.md).
+Alternatively, if you are looking for extensive documentation on the Brane configuration files relevant to a worker node, checkout the [documentation chapters]({{  brane_docs_root }}/overview/index.html).
 
 
 

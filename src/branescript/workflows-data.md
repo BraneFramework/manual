@@ -1,5 +1,5 @@
 # Workflows and Data
-In the [previous chapter](./workflow.md), we've discussed writing the simplest workflow possible in BraneScript. In this chapter, we will build on this, and examine the concepts of _data_ and _intermediate results_.
+In the [previous chapter](./hello-world.md), we've discussed writing the simplest workflow possible in BraneScript. In this chapter, we will build on this, and examine the concepts of _data_ and _intermediate results_.
 
 We will start by introducing the concepts of data and intermediate results as far as Brane is concerned. Then, we will write a second workflow in this series to use these concepts in practise. Finally, we will show you how to create a local dataset and then run your workflow.
 
@@ -23,7 +23,7 @@ Put differently, a dataset is something that can serve as the input to your work
 ## Using Data in a Workflow
 In this section, we will use the concept of Data in a workflow to see how one can use it in practise.
 
-For this tutorial, we will write a workflow that prints the contents of a specific dataset and then creates a copy of it. To do so, we will use the [cat](https://github.com/epi-project/brane-std/tree/main/cat) and [copy_result](https://github.com/epi-project/brane-std/tree/main/copy_result) packages from the Brane standard library. Moreover, for now we will assume that there is some dataset with the identifier `colours` that we are interested in printing and copying.
+For this tutorial, we will write a workflow that prints the contents of a specific dataset and then creates a copy of it. To do so, we will use the [cat](https://github.com/braneframework/brane-std/tree/main/cat) and [copy_result](https://github.com/braneframework/brane-std/tree/main/copy_result) packages from the Brane standard library. Moreover, for now we will assume that there is some dataset with the identifier `colours` that we are interested in printing and copying.
 
 To begin, create a second workflow file, which we will call `data.bs`. Open it with your favourite editor, and start by adding the import for the packages:
 ```bscript
@@ -32,7 +32,7 @@ import copy_result;   // Provides 'copy_result()'
 ```
 Next, we will create a _Dataset reference_. This is what refers to a specific dataset, so that Brane knows what we are talking about. Datasets are referenced by some identifier, and are assumed to be unique within a single instance.
 
-To create one, we will use the builtin `Data`-[class](../../branescript/statements.md#classes). It has only one field, `name`, which is the identifier of the dataset to use. We will create it as follows:
+To create one, we will use the builtin `Data`-[class]({{ specification_root }}/branescript/statements.md#classes). It has only one field, `name`, which is the identifier of the dataset to use. We will create it as follows:
 ```bscript
 // ...
 
@@ -40,7 +40,7 @@ new Data{ name := "colours" };
 ```
 This is the generic BraneScript syntax for instantiating a class with a single field. Because `Data` is a builtin, however, Brane will treat it as a special value.
 
-Note, however, that we currently do nothing with the created data reference; it is created and immediately dropped. To prevent this, we will store it in a [variable](../../branescript/statements.md#variable-declarations):
+Note, however, that we currently do nothing with the created data reference; it is created and immediately dropped. To prevent this, we will store it in a [variable]({{ specification_root }}/branescript/statements.md#variable-declarations):
 ```bscript
 // ...
 
@@ -71,7 +71,7 @@ You may note that the `cat()`-function actually takes two parameters: a data ref
 
 > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> In the future, though, we hope to introduce some kind of _Data type system_ that can aid in dealing with this.
 
-For the `cat`-function specifically, this extra argument defines which file you want to print in the dataset. Because our dataset will consist of a single file, we pass it `"-"` which has this meaning (see its [documentation](https://github.com/epi-project/brane-std/tree/main/cat)).
+For the `cat`-function specifically, this extra argument defines which file you want to print in the dataset. Because our dataset will consist of a single file, we pass it `"-"` which has this meaning (see its [documentation](https://github.com/braneframework/brane-std/tree/main/cat)).
 
 Our workflow is now able to print a specific dataset. We will now use the same data reference to copy it to a new one, for which we will use the `copy_result()` function.
 
@@ -92,7 +92,7 @@ For completeness, we can show that the copied dataset is the same as the origina
 // Add this below the copy
 println(cat(data_copy, "contents"));
 ```
-Note that we now have to specify `"contents"` instead of `"-"`. To see why, we refer you to the documentation of the [cat](https://github.com/epi-project/brane-std/tree/main/cat)-package.
+Note that we now have to specify `"contents"` instead of `"-"`. To see why, we refer you to the documentation of the [cat](https://github.com/braneframework/brane-std/tree/main/cat)-package.
 
 The only thing left to do is to commit the result returned by the function to make it a persistent dataset. To do so, we use the `commit_result`-builtin:
 ```bscript
@@ -125,7 +125,7 @@ commit_result("colours_copy", data_copy);
 
 
 ## Running a Workflow with Data
-Running a workflow with Data goes exactly the same as running a workflow without. Make sure that your local machine or the remote instance has the packages available it needs to, and then run your file using the `brane run`-command (see the [previous chapter](./workflow.md#running-a-workflow) for more information).
+Running a workflow with Data goes exactly the same as running a workflow without. Make sure that your local machine or the remote instance has the packages available it needs to, and then run your file using the `brane workflow run`-command (see the [previous chapter](./hello-world.md#running-a-workflow) for more information).
 
 However, there is one extra concern that comes into play when running a workflow with data; and that is that the dataset has to be available where you are running it.
 
@@ -202,6 +202,6 @@ you should now see both the `colours` and `colours_copy` datasets!
 
 
 ## Next
-Now that you are able to run package functions and work with data, you have the most elementary parts of writing workflows under your belt. A good next step is to examine the [BraneScript documentation](../../branescript/introduction.md) to learn all the features of the language, such as if-statements, for-loops or parallel-statements.
+Now that you are able to run package functions and work with data, you have the most elementary parts of writing workflows under your belt. A good next step is to examine the [BraneScript documentation]({{ specification_root }}/branescript/introduction.md) to learn all the features of the language, such as if-statements, for-loops or parallel-statements.
 
 Alternatively, you can also go the [next chapter](./advanced-workflows.md) in this series that will deal with some pretty typical patterns and useful concepts in Brane. It assumes that you are either already famliliar with basic control flow in BraneScript (ifs, fors, whiles) or that you are at least able to recognize them.

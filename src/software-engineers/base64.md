@@ -1,9 +1,9 @@
 # Package inputs & multiple functions
 In the [previous chapter](./hello-world.md), you created your first package, and learned how to build and run a function that take no inputs.
-
+c
 However, this makes for very boring workflows. Thus, in this chapter, we will extend upon this by creating a container with multiple functions, and where we can pass inputs to those functions. Concretely, we will describe how to implement a _base64_ package, which will contain a function to encode a string and decode a string to and from [Base64](https://en.wikipedia.org/wiki/Base64), respectively.
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/base64` of the [repository](https://github.com/epi-project/brane).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/base64` of the [repository](https://github.com/BraneFramework/brane).
 
 
 ## 1. Writing code
@@ -403,7 +403,7 @@ actions:
       type: string
 ```
 
-The complete `container.yml` may be found in the [project repository](https://github.com/epi-project/brane) (`examples/doc/base64/container.yml`).
+The complete `container.yml` may be found in the [project repository](https://github.com/BraneFramework/brane) (`examples/doc/base64/container.yml`).
 
 
 # 3. Building & Publishing the package
@@ -446,8 +446,8 @@ You can refer to the chapters on [writing workflows](TODO) or the documentation 
 ## Next
 You should now be able to build most functions, congratulations!
 
-In the [next chapter](./data.yml), we will consider a last-but-not-least aspect of building packages: datasets and intermediate results. If you plan to do any serious data processing with Brane, we highly recommend you to check that chapter out.
+In the [next chapter](./data.md), we will consider a last-but-not-least aspect of building packages: datasets and intermediate results. If you plan to do any serious data processing with Brane, we highly recommend you to check that chapter out.
 
 Otherwise, check the in-depth documentation on the [package system](../packages/introduction.md). It will talk about the different types of packages, how they are implemented and the complete overview of the interface with code and the `container.yml` file.
 
-You can also continue with the chapters for [scientists] to know more about how to write workflows, or check the documentation of [BraneScript](../branescript/introduction.md) and [Bakery](../bakery/introduction.md).
+You can also continue with the chapters for scientists to know more about how to write workflows, or check the documentation of [BraneScript](../branescript/introduction.md) and [Bakery](../bakery/introduction.md).

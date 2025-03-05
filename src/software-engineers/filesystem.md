@@ -191,6 +191,6 @@ You are now able to use the shared filesystem!
 
 A common use-case for such a filesystem is to download or extract data from within a package to it so that other packages may use it. For example, if I have a `data.csv` and embed that in a package (using the `files`-section in the `container.yml`), I can then copy it to the shared filesystem using some `extract()` package function. Then, other packages can easily use this dataset without having to re-download it again or having to pass it as huge strings in BraneScript.
 
-Another common use-case is in combination with the [JupyterLab IDE](https://github.com/epi-project/brane-ide). Your Brane packages can write results or even plots to the shared `/data` folder, which the IDE has also mounted. That way, you can easily visualise the images produced by Brane in the notebook, by loading them from the filesystem.
+Another common use-case is in combination with the [JupyterLab IDE](https://github.com/braneframework/brane-ide). Your Brane packages can write results or even plots to the shared `/data` folder, which the IDE has also mounted. That way, you can easily visualise the images produced by Brane in the notebook, by loading them from the filesystem.
 
 If you're interested in other types of Brane packages, you can follow the [next tutorial](./github.md). Otherwise, you can refer to the [Scientists](../scientists/introduction.md)-chapters to learn how to write workflows for Brane, or go to the [BraneScript](../branescript/introduction.md) documentation to learn more about Brane's DSL.

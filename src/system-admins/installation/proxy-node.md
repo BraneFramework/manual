@@ -31,7 +31,7 @@ Once these complete successfully, you should have the images for the worker node
 
 
 ### Compiling the images
-The other way to obtain the images is to compile them yourself. If you want to do so, refer to the [compilation instructions](/specification/development/compilation.html) over at the [Brane: A Specification](/specification)-book for instructions.
+The other way to obtain the images is to compile them yourself. If you want to do so, refer to the [compilation instructions]({{ specification_root }}/development/compilation.html) over at the [Brane: A Specification]({{ specification_root }})-book for instructions.
 
 
 ## Generating configuration
@@ -84,7 +84,7 @@ branectl generate node -f proxy 192.0.2.2
 
 Once again, you can change many of the properties in the `node.yml` file by specifying additional command-line options (see the [`branectl` documentation](TODO) or the builtin `branectl generate node --help`) or by changing the file manually (see the [`node.yml` documentation](../../config/admins/node.md)).
 
-> <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Due to a  [bug](https://github.com/epi-project/brane/issues/27) in one of the framework's dependencies, it cannot handle certificates on IP addresses. To workaround this issue, the `-H` option is provided; it can be used to specify a certain hostname/IP mapping for this node only. Example:
+> <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Due to a  [bug](https://github.com/BraneFramework/brane/issues/27) in one of the framework's dependencies, it cannot handle certificates on IP addresses. To workaround this issue, the `-H` option is provided; it can be used to specify a certain hostname/IP mapping for this node only. Example:
 > ```bash
 > # We can address '192.0.2.2' with 'some-domain' now
 > branectl generate node -f -H some-domain:192.0.2.2 proxy bob-domain.com

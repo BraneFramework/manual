@@ -15,7 +15,7 @@ Next, it is good practise to write a header comment to explain what a file does.
 // A BraneScript workflow for printing "Hello, world!" to the screen.
 ```
 
-Next, we have to tell the Brane system which packages we want to use in our workflow. To do so, we will use the [`import`](../../branescript/statements.md#imports)-statement. This statement takes the identifier if the package, followed by a semicolon (`;`).
+Next, we have to tell the Brane system which packages we want to use in our workflow. To do so, we will use the [`import`]({{ specification_root }}/appendix/languages/bscript/features.html#import-statements)-statement. This statement takes the identifier if the package, followed by a semicolon (`;`).
 
 > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Note that all Brane statements end with a semicolon `;`. If you forget it, you may encounter weird syntax errors; so if you don't know what the error means but it's a syntax error, you should first check for proper usage of the semicolons.
 
@@ -25,13 +25,13 @@ We want to import the `hello_world` package, so we add:
 
 import hello_world;
 ```
-This will import _all_ of the package's functions into the global namespace. Be aware of this, since this may lead to naming conflicts. See the [advanced workflows](./advanced-workflows.md#scoping)-chapter for ways of dealing with this.
+This will import _all_ of the package's functions into the global namespace. Be aware of this, since this may lead to naming conflicts. See the [advanced workflows](./advanced.md#scoping)-chapter for ways of dealing with this.
 
-In our case, this imports only one function: the `hello_world()` function. As you can read in the [package's README](https://github.com/epi-project/brane-std/tree/main/hello_world), this function takes no arguments, but returns a string who's value is: `Hello, world!`.
+In our case, this imports only one function: the `hello_world()` function. As you can read in the [package's README](https://github.com/braneframework/brane-std/tree/main/hello_world), this function takes no arguments, but returns a string who's value is: `Hello, world!`.
 
 > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> If you do not want to go to the internet to find out what a package does, you can also use the `inspect`-subcommand of the `brane`-executable:
 > ```bash
-> brane inspect hello_world
+> brane package inspect hello_world
 > ```
 > which will print something like:
 > <img src="../../assets/img/workflow-inspect.png" alt="Details about the 'hello_world' package."/>
@@ -52,7 +52,7 @@ However, running the file like this will probably not work. Remember that the pa
 // (as you would in other languages)
 println(hello_world());
 ```
-See the [BraneScript documentation](../../branescript/builtins.md) for a full overview of all supported builtins.
+See the [BraneScript documentation](TODO) for a full overview of all supported builtins.
 
 We now have a workflow that should print `Hello, world!` when we run it, which is what we set out to do!
 
@@ -74,7 +74,7 @@ Be sure to save it somewhere where you can find it. Remember, we will refer to i
 
 
 ## Running a workflow
-After you have written a workflow file, you can run it using the `brane` executable. Thus, make sure you have it installed and available in your PATH (see the [installation](../installation.md) chapter).
+After you have written a workflow file, you can run it using the `brane` executable. Thus, make sure you have it installed and available in your PATH (see the [installation](../scientists/installation.md) chapter).
 
 There are two modes of running a workflow: you can run it locally, in which all tasks are executed on your own machine and using the packages that are available locally. Alternatively, you can also run it on a remote instance, in which the tasks are executed on domains and nodes within that instance, using packages available only in that instance.
 
@@ -83,13 +83,12 @@ Typically, you test your workflow locally first to make sure that it works and c
 
 To run it locally, you first have to make sure you have all the packages available locally. For us, this is the `hello_world` package. You can check whether you have it by running `brane list`, and then install it if you don't by downloading it from GitHub:
 ```bash
-brane import epi-project/brane-std hello_world
+brane package import braneframework/brane-std hello_world
 ```
-For more details on this, see the [previous chapter](../packages.md).
 
-With the packages in place, you can then use the `brane run`-command to run the file we have just created:
+With the packages in place, you can then use the `brane workflow run`-command to run the file we have just created:
 ```bash
-brane run hello_world.bs
+brane workflow run hello_world.bs
 ```
 (Replace `hello_world.bs` with the path to the file you have created)
 
@@ -104,17 +103,17 @@ If your workflow failed, Brane will try to offer you as much help as it can. Mak
 ### Remote execution
 The procedure for executing a workflow on a remote instance is very comparable to running a workflow locally.
 
-The first step is to make sure that the instance has all the packages you need. Use a combination of `brane search` and `brane push` to achieve this (see the [previous chapter](../packages.md) for more information).
+The first step is to make sure that the instance has all the packages you need. Use a combination of `brane search` and `brane push` to achieve this.
 
 Then, to execute your workflow, you can do the same, but now specify the `--remote` flag to use the instance currently selected:
 ```bash
-brane run --remote ...
+brane workflow run --remote ...
 ```
 
 Thus, to run our workflow on the remote instance we are currently loggin-in to, we would use to the following command:
 ```bash
 # We assume your already executed 'brane instance add'
-brane run --remote hello_world.bs
+brane workflow run --remote hello_world.bs
 ```
 
 If your packages are in order, this should produce the same result as when executing the workflow locally.
@@ -123,13 +122,13 @@ If your packages are in order, this should produce the same result as when execu
 ## The REPL
 As an alternative to writing an entire file and running that, you can also use the Brane Read-Eval-Print Loop (REPL). This is an interactive environment that you can use to provide workflows in a segmented way, typically providing one statement at a time and seeing the result immediately.
 
-> <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The REPL works in most cases, but it is known to be buggy for some design patterns (see subsequent chapters). If you run into an issue where something works in a file but not in a REPL, you can typically solve it by writing the separate statements in a single line. Please also let us know by [raising an issue](https://github.com/epi-project/brane/issues).
+> <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The REPL works in most cases, but it is known to be buggy for some design patterns (see subsequent chapters). If you run into an issue where something works in a file but not in a REPL, you can typically solve it by writing the separate statements in a single line. Please also let us know by [raising an issue](https://github.com/BraneFramework/brane/issues).
 
 Because our workflow is so short, we will re-do it in the REPL.
 
 First, open it by running:
 ```bash
-brane repl
+brane workflow repl
 ```
 This should welcome you with the following:
 
@@ -149,9 +148,9 @@ which should produce:
 
 Which is the same result as with the separate file, instead that we've now interleaved writing and executing the workflow.
 
-You can also use the REPL in a remote scenario, by providing the `--remote` option when running it, similar to `brane run`:
+You can also use the REPL in a remote scenario, by providing the `--remote` option when running it, similar to `brane workflow run`:
 ```bash
-brane repl --remote
+brane workflow repl --remote
 ```
 Every command executed in this REPL is executed on the specified instance.
 
@@ -159,4 +158,4 @@ Every command executed in this REPL is executed on the specified instance.
 
 
 ## Next
-In the [next chapter](./workflows-data.md), we will treat datasets and intermediate results, which are an essential component to writing workflows. If you are already familiar with those, you can also check the [subsequent chapter](./advanced-workflows.md), which introduces the finer concepts of workflow writing. Alternatively, you can also checkout the full [BraneScript documentation](../branescript/introduction.md).
+In an [upcoming chapter](./data-results.md), we will treat datasets and intermediate results, which are an essential component to writing workflows. If you are already familiar with those, you can also check the [subsequent chapter](./advanced.md), which introduces the finer concepts of workflow writing. Alternatively, you can also checkout the full [BraneScript documentation](../branescript/introduction.md).
