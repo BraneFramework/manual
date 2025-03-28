@@ -15,6 +15,7 @@
   - [Control node](./system-admins/installation/control-node.md)
   - [Worker node](./system-admins/installation/worker-node.md)
   - [Proxy node](./system-admins/installation/proxy-node.md)
+  - [Certificate management](./system-admins/installation/certs.md)
 
 
 # Policy experts

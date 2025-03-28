@@ -120,6 +120,8 @@ To do so, [obtain the public certificate](./worker-node.md#generating-certificat
 
 At runtime, the Brane services will look for the peer domain's identity by looking up the folder with their name in it. Thus, make sure that every worker in your system has a name that you filesystem can represent.
 
+For more information, see the [Certificate management](./certs.md)-chapter.
+
 
 ## Launching the instance
 Finally, now that you have the images and the configuration files, it's time to start the instance.

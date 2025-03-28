@@ -136,6 +136,8 @@ In contrast to setting up a control node, a worker node will have to strongly id
 
 In Brane, the identity of domains is proven by the use of [X.509 certificates](https://en.wikipedia.org/wiki/X.509). Thus, before you can start your worker node, we will have to generate some certificates.
 
+For more information, see the [Certificate management](./certs.md)-chapter.
+
 
 ### Server-side certificates
 Every worker node is required to have at least a certificate authority (CA) certificate and a server certificate. The first is used as the "authority" of the domain, which is used to sign other certificates such that the worker can see that it has been signed by itself in the past. The latter, in contrast, is used to provide the identity of the worker in case it plays the role of a server (some other domain connects to us and requests a dataset).
