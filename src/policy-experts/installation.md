@@ -3,7 +3,7 @@ As a policy expert, you will write policies and then manage them in the node's `
 
 To do the former, you need a development environment for the reasoner backend you will be using. See the [Installing the eFLINT Interpreter](#installing-the-eflint-interpreter)-section to find out how to setup a local environment for eFLINT.
 
-For the latter, you can choose between the [Policy Reasoner GUI](https://github.com/epi-project/policy-reasoner-gui), a visual interface, or `branectl`, a command-line interface. Installing either of these is explained in [Installing management tools](#installing-management-tools)-section.
+For the latter, you can choose between the [Policy Reasoner GUI](https://github.com/braneframework/policy-reasoner-gui), a visual interface, or `branectl`, a command-line interface. Installing either of these is explained in [Installing management tools](#installing-management-tools)-section.
 
 
 ## Installing the eFLINT Interpreter
@@ -39,17 +39,17 @@ Also consider adding syntax highlighting for your favourite code editor. There a
 
 ## Installing management tools
 To manage the local Brane node, you need to use a tool that can interface with the reasoner and push/pull policies, change the active policy and test drive your changes. Currently, there are two tools available that can do this:
-1. The official [Policy Reasoner GUI](https://github.com/epi-project/policy-reasoner-gui), which provides a visual interface; and
+1. The official [Policy Reasoner GUI](https://github.com/braneframework/policy-reasoner-gui), which provides a visual interface; and
 2. The Brane CTL management tool, which provides a terminal interface.
 
 Installing the first is recommended in most cases, except when you're in need of a quick way to manage them (e.g., in scenarios where the system administrator also takes the role of the policy expert) or are more comfortable with terminals in general.
 
 ### The Policy Reasoner GUI
-The most up-to-date instructions for installing the policy reasoner GUI are described [here](https://github.com/epi-project/policy-reasoner-gui/blob/main/README.md). Below follows a summary for convenience.
+The most up-to-date instructions for installing the policy reasoner GUI are described [here](https://github.com/braneframework/policy-reasoner-gui/blob/main/README.md). Below follows a summary for convenience.
 
 First, clone the repository to your machine using Git:
 ```bash
-git clone https://github.com/epi-project/policy-reasoner-gui && cd ./policy-reasoner-gui
+git clone https://github.com/braneframework/policy-reasoner-gui && cd ./policy-reasoner-gui
 ```
 Then, you can either install the GUI natively or in a Docker container.
 
@@ -73,14 +73,14 @@ to build & run both the client and the client's backend.
 
 
 ### The `branectl` management tool
-To install the management tool, you can download the binary from the [repository](https://github.com/epi-project/brane) or compile it from scratch.
+To install the management tool, you can download the binary from the [repository](https://github.com/braneframework/brane) or compile it from scratch.
 
-To download, you simply go to the [release](https://github.com/epi-project/brane/releases/latest) and download the `branectl` binary of your choice. There are options to download it for Linux ([`branectl-linux-x86_64`](https://github.com/epi-project/brane/releases/latest/download/branectl-linux-x86_64)), Intel Macs ([`branectl-darwin-x86_64`](https://github.com/epi-project/brane/releases/latest/download/branectl-darwin-x86_64)) or M1/M2/M3 Macs ([`branectl-darwin-aarch64`](https://github.com/epi-project/brane/releases/latest/download/branectl-darwin-aarch64)).
+To download, you simply go to the [release](https://github.com/braneframework/brane/releases/latest) and download the `branectl` binary of your choice. There are options to download it for Linux ([`branectl-linux-x86_64`](https://github.com/braneframework/brane/releases/latest/download/branectl-linux-x86_64)), Intel Macs ([`branectl-darwin-x86_64`](https://github.com/braneframework/brane/releases/latest/download/branectl-darwin-x86_64)) or M1/M2/M3 Macs ([`branectl-darwin-aarch64`](https://github.com/braneframework/brane/releases/latest/download/branectl-darwin-aarch64)).
 
 To compile the binary yourself, install [GCC's `gcc` and `g++`](https://gcc.gnu.org/), [CMake](https://cmake.org/) and [Rust](https://rust-lang.org) ([rustup](https://rustup.rs) is usually the easiest) first if you haven't already. Then, clone the repository and run the `make.py` script:
 ```
-git clone https://github.com/epi-project/brane && cd ./brane
-./make.py ctl
+git clone https://github.com/braneframework/brane && cd ./brane
+cargo xtask build brane-ctl
 ```
 The resulting binary can be found under `target/release/branectl`.
 

@@ -123,14 +123,6 @@ branectl generate node -f worker 192.0.2.2 bob
 
 Once again, you can change many of the properties in the `node.yml` file by specifying additional command-line options (see the [`branectl` documentation](TODO) or the builtin `branectl generate node --help`) or by changing the file manually (see the [`node.yml` documentation](../../config/admins/node.md)).
 
-> <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Due to a  [bug](https://github.com/epi-project/brane/issues/27) in one of the framework's dependencies, it cannot handle certificates on IP addresses. To workaround this issue, the `-H` option is provided; it can be used to specify a certain hostname/IP mapping for this node only. Example:
-> ```bash
-> # We can address '192.0.2.2' with 'some-domain' now
-> branectl generate node -f -H some-domain:192.0.2.2 worker bob-domain.com bob
-> ```
-> Note that this is local to this domain only; you have to specify this on other nodes as well. For more information, see the [`node.yml` documentation](../../config/admins/node.md).
-
-
 ## Generating certificates
 In contrast to setting up a control node, a worker node will have to strongly identify itself to prove to other worker nodes who it is. This is relevant, because worker nodes may want to download data from one another; and if this dataset is private, then the other domains likely won't share it unless they know who they are talking to.
 

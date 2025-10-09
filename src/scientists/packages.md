@@ -23,16 +23,14 @@ The first method to download a package is by downloading it from GitHub using th
 
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Of course, you can easily download the packages manually from GitHub and then build them as if you wrote the package yourself. See the [chapters for software engineers](../software-engineers/introduction.md) on how to do that. This section focusses on using the more convenient method provided by `brane`.
 
-As an example repository, we will use the [brane-std](https://github.com/epi-project/brane-std) repository. It provides a set of packages that are useful in general scenarios, and so can be thought of as a kind of standard library for Brane.
+As an example repository, we will use the [brane-std](https://github.com/braneframework/brane-std) repository. It provides a set of packages that are useful in general scenarios, and so can be thought of as a kind of standard library for Brane.
 
-Before we can install a package from a repository, first we have to find the identifier of the repository. This identifier is written as the GitHub user or organisation name, a slash, and then the name of the repository. Or, more precisely, the identifier is the part of the URL of a repository that comes after `https://github.com/`. For example, for the standard library, which can be found at https://github.com/epi-project/brane-std, the ID would be:
-```
-epi-project/brane-std
+Before we can install a package from a repository, first we have to find the identifier of the repository. This identifier is written as the GitHub user or organisation name, a slash, and then the name of the repository. Or, more precisely, the identifier is the part of the URL of a repository that comes after `https://github.com/`. For example, for the standard library, which can be found at https://github.com/braneframework/braneframework/brane-std
 ```
 
 To download a package and install it locally, you can use the following command:
 ```bash
-brane import <REPO> <FILE>
+brane package import <REPO> <FILE>
 ```
 where `<REPO>` is the identifier of the repository, and `<FILE>` is the path to the package to download in that repository. Note that you have to refer to the `container.yml` file (or similar) for that package; consult the documentation of the package to find which file to refer to specifically.
 
@@ -40,7 +38,7 @@ where `<REPO>` is the identifier of the repository, and `<FILE>` is the path to 
 
 So, for example, to download the `hello_world` package from the standard library:
 ```bash
-brane import epi-project/brane-std hello_world/container.yml
+brane package import braneframework/brane-std hello_world/container.yml
 ```
 
 Brane will then download the package and install it, making it available for local use.
@@ -63,16 +61,16 @@ where `<ADDRESS>` is the URL where the instance may be reached.
 
 Once logged-in, you can fetch a list of available packages by using:
 ```bash
-brane search
+brane package search
 ```
 
 Which should display something like:
 
 <img src="../assets/img/packages-search.png" alt="List of packages living in a remote instance." width=800/>
 
-Then you can use the `brane pull` command to pull one of the available packages:
+Then you can use the `brane package pull` command to pull one of the available packages:
 ```bash
-brane pull <ID>
+brane package pull <ID>
 ```
 where `<ID>` is typically the name of the package. However, if you want to download a specific package version instead of just the latest version, you can also use `<NAME>:<VERSION>`.
 
@@ -82,9 +80,9 @@ For example, to download the `hello_world` package from an instance that is reac
 brane instance add some-domain.com --use
 
 # Pull the package
-brane pull hello_world
+brane package pull hello_world
 # Or, to pull version 1.0.0 specifically:
-brane pull hello_world:1.0.0
+brane package pull hello_world:1.0.0
 ```
 
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Note that you only have to login once, which is then saved and remembered until you manually login to another instance later.
@@ -103,7 +101,7 @@ where `<ADDRESS>` is the URL where the instance may be reached. Consult the [pre
 
 Then, you can find a list of the packages installed locally by running:
 ```bash
-brane list
+brane package list
 ```
 which should return something like:
 
@@ -111,7 +109,7 @@ which should return something like:
 
 Next, you can push the latest version of a package to the remote instance by using:
 ```bash
-brane push <ID>
+brane package push <ID>
 ```
 where `<ID>` is the name of the package. However, if you want to download a specific package version, you can also use `<NAME>:<VERSION>`.
 
@@ -121,9 +119,9 @@ For example, to push the package `hello_world` to an instance that is reachable 
 brane instance add some-domain.com --use
 
 # Push the package
-brane push hello_world
+brane package push hello_world
 # Or, to push version 1.0.0 specifically:
-brane push hello_world:1.0.0
+brane package push hello_world:1.0.0
 ```
 
 
@@ -133,35 +131,35 @@ Finally, Brane conveniently offers you functions for removing existing packages 
 ### Local packages
 For local packages, you can use the following command:
 ```bash
-brane remove <ID>
+brane package remove <ID>
 ```
 where `<ID>` is the name of the package. If you want to delete a specific version instead of _all_ its versions, you can use `<NAME>:<VERSION>` instead.
 
 For example, to remove the `hello_world` package from the local repository:
 ```bash
-brane remove hello_world
+brane package remove hello_world
 # Or, a specific version:
-brane remove hello_world:1.0.0
+brane package remove hello_world:1.0.0
 ```
 
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Don't worry - Brane will always ask you if you are sure before removing a package. Should you want to consciously skip that, however, you can use the `--force` flag to skip the check:
 > ```bash
-> brane remove hello_world --force
+> brane package remove hello_world --force
 > ```
 > Use at your own risk.
 
-The same can be done for remote packages, except that you should use `brane unpublish` instead:
+The same can be done for remote packages, except that you should use `brane package unpublish` instead:
 ```bash
-brane unpublish <ID>
+brane package unpublish <ID>
 ```
 ```bash
 # Don't forget to login first if you haven't already - you are interacting with an instance again
 brane instance add some-domain.com --use
 
 # For hello_world:
-brane unpublish hello_world
+brane package unpublish hello_world
 # Or a specific version:
-brane unpublish hello_world:1.0.0
+brane package unpublish hello_world:1.0.0
 ```
 
 

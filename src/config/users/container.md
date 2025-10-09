@@ -35,7 +35,7 @@ entrypoint:
 
 ### Extra metadata
 - `owners` _\[optional\]_: A sequence of strings which defines the owners/writers of the package. Omitting this field will default to no owners.
-- `description` _\[optional\]_: A string description the package in more detail. This is only used for the `brane inspect`-subcommand (see the [chapters for software engineers](../../software-engineers/introduction.md)). If omitted, will default to an empty string / no description.
+- `description` _\[optional\]_: A string description the package in more detail. This is only used for the `brane package inspect`-subcommand (see the [chapters for software engineers](../../software-engineers/introduction.md)). If omitted, will default to an empty string / no description.
 
 An example of using these fields:
 ```yaml
@@ -191,7 +191,7 @@ The following fields define a function layout:
   - `type`: A string describing the BRANE data type of the input argument. The possible types are defined in the [relevant section](#data-types) below.
 - `output` _\[optional\]_: A sequence of maps that defines the possible output values to a function. The nested maps are of the same as for the `input`-field (see above), except that the names of the values are used as fieldnames in the YAML outputted by the package code. The order or the sequence determines the order of the returned values in the workflow language. Omitting the sequence defaults to an empty sequence, i.e., returning a void-value.
   > <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px;"/> Older BRANE versions (<= 3.0.0) do not support more than one output value, even though they do require a YAML map to be passed. In other words, the sequence cannot be longer than one entry.
-- `description` _\[optional\]_: An additional description for this specific function. This is only used for the `brane inspect`-subcommand (see the [chapters for software engineers](../../software-engineers/introduction.md)). If omitted, will default to an empty string / no description.
+- `description` _\[optional\]_: An additional description for this specific function. This is only used for the `brane package inspect`-subcommand (see the [chapters for software engineers](../../software-engineers/introduction.md)). If omitted, will default to an empty string / no description.
 
 For examples, see the [Functions & Classes section](#functions--classes).
 

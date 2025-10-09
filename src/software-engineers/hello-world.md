@@ -3,7 +3,7 @@ In this chapter, we will guide you through creating the simplest and most basic 
 
 This tutorial assumes that you have experience with programming. In particular, it's useful to known about [standard streams](https://en.wikipedia.org/wiki/Standard_streams) and [environment variables](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa).
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/hello-world` of the [repository](https://github.com/epi-project/brane).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/hello-world` of the [repository](https://github.com/braneframework/brane).
 
 
 ## 1. Writing the code
@@ -118,7 +118,7 @@ To build a package, we will finally use the Brane CLI. We will assume that you h
 
 To build the package, simply run the following from within the `hello-world` directory:
 ```bash
-brane build ./container.yml
+brane package build ./container.yml
 ```
 
 While the command above seems simple, there are a couple of semantics to think about:
@@ -132,7 +132,7 @@ If everything succeeds, you should see something along the lines of:
 
 Your package is now available in the _local repository_ that only exists on your laptop. To verify it, you can run:
 ```bash
-brane list
+brane package list
 ```
 which should show you:
 
@@ -146,7 +146,7 @@ To do so, the Brane CLI provides a build-in test capability, which can run any f
 
 To run it for the `hello_world` package, run the following command:
 ```bash
-brane test hello_world
+brane package test hello_world
 ```
 
 You will then be greeted by something along the lines of:
@@ -184,15 +184,15 @@ bash push hello_world
 
 This command will automatically push the latest version of your package to the remote instance. If you want to be explicit about which version to push, you may add it to the end of the command. For this tutorial, this command will give the same result as the one above:
 ```bash
-brane push hello_world 1.0.0
+brane package push hello_world 1.0.0
 ```
 
 Your package is now available in the remote instance. You can verify this by running:
 ```bash
-brane search
+brane package search
 ```
 
-This commands does exactly the same as the `brane list` command, except that it doesn't inspect your local repository but instead the remote one you are logged-in to. Thus, it should show you something along the lines of:
+This commands does exactly the same as the `brane package list` command, except that it doesn't inspect your local repository but instead the remote one you are logged-in to. Thus, it should show you something along the lines of:
 
 <img src="../assets/img/hello-world-search.png" alt="An entry for 'hello_world' in the list" width=700/>
 
@@ -204,7 +204,7 @@ To do so, we will connect to the remote instance using the REPL (Read, Eval, Pri
 
 To start the REPL, run:
 ```bash
-brane repl --remote http://127.0.0.1:50053
+brane workflow repl --remote http://127.0.0.1:50053
 ```
 
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> If you omit the `--remote` option from the command, you will run a local REPL instead. This can be used to test workflows and run package locally more thoroughly, and should work the same (except that you don't actually push anything to a Brane instance).
