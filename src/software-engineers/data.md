@@ -5,7 +5,7 @@ However, so far, your code will not be very usable to data scientists. That's be
 
 In this tutorial, we will cover exactly that: how you can define a (local) dataset and use it in your package. This is illustrated by creating a package that can compute the minimum or maximum of a given file. First, however, we will provide a little background on how datasets are represented, and what's the difference between Brane's concept of _data_ and Brane's concept of _intermediate results_. If you're eager and already know this stuff, you can skip ahead to the [section after the next one](#1-writing-code).
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/minmax` of the [repository](https://github.com/epi-project/brane).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/minmax` of the [repository](https://github.com/braneframework/brane).
 
 
 ## 0. Background: Variables & Data
@@ -269,7 +269,7 @@ Similarly, calling your package from the terminal will require you to explicitly
 
 // TODO
 
-You should also see that executing your package call will not be very exciting, since all it does is produce a new dataset. This is alright, since subsequent package calls in a workflows are still able to use it; however, for demonstration purposes, you can try to download the [cat package](https://github.com/epi-project/brane-std/cat) to inspect it:
+You should also see that executing your package call will not be very exciting, since all it does is produce a new dataset. This is alright, since subsequent package calls in a workflows are still able to use it; however, for demonstration purposes, you can try to download the [cat package](https://github.com/braneframework/brane-std/cat) to inspect it:
 
 // TODO
 

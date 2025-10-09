@@ -151,10 +151,10 @@ Once you've written the file to `filesystem/container.yml`, we can move on to th
 As before, you first have to build your package:
 ```bash
 # We assume you CD'ed into the "filesystem" folder
-brane build ./container.yml
+brane package build ./container.yml
 ```
 
-Then, you can test it. However, local Brane operations (i.e., `brane test` and `brane repl` without `--remote`) don't mount a `/data` folder by default. Thus, if you were to test your package without mounting one, the following would happen:
+Then, you can test it. However, local Brane operations (i.e., `brane package test` and `brane workflow repl` without `--remote`) don't mount a `/data` folder by default. Thus, if you were to test your package without mounting one, the following would happen:
 
 <img src="../assets/img/filesystem-test-1.png" alt="Failing to read from the shared data folder" width=600/>
 
@@ -162,9 +162,9 @@ If the filesystem were properly persistent, the second call would have worked; b
 
 Note, though, that the _first_ package call (to `write()`) returned a success code (`0`; check the comments of the Python file). Even though the `/data` folder does not point to a shared folder, it does exist, which means that the package simply writes the file to a container-local folder, which gets cleared once the package call returns. Thus, when using the the shared filesystem, it's important to remember that errors with it might _only_ be visible when retrieving the data.
 
-Let us now test the package properly. Make sure you have a local folder prepared that you want to use as the shared folder; we will call it `./data`. To mount it, provide the `--data` option to the `brane test` command:
+Let us now test the package properly. Make sure you have a local folder prepared that you want to use as the shared folder; we will call it `./data`. To mount it, provide the `--data` option to the `brane package test` command:
 ```bash
-brane test --data ./data filesystem
+brane package test --data ./data filesystem
 ```
 
 Now, the functions work as expected:
@@ -173,7 +173,7 @@ Now, the functions work as expected:
 
 Because we have mounted a local folder as the `/data` folder, you should be able to see a file `test.txt` in the folder you mounted.
 
-The same principle applies to the `brane repl` command. It, too, needs to mount a local folder, which you can designate using the `--data` option.
+The same principle applies to the `brane workflow repl` command. It, too, needs to mount a local folder, which you can designate using the `--data` option.
 
 
 # 4. Publishing the package
@@ -191,6 +191,6 @@ You are now able to use the shared filesystem!
 
 A common use-case for such a filesystem is to download or extract data from within a package to it so that other packages may use it. For example, if I have a `data.csv` and embed that in a package (using the `files`-section in the `container.yml`), I can then copy it to the shared filesystem using some `extract()` package function. Then, other packages can easily use this dataset without having to re-download it again or having to pass it as huge strings in BraneScript.
 
-Another common use-case is in combination with the [JupyterLab IDE](https://github.com/epi-project/brane-ide). Your Brane packages can write results or even plots to the shared `/data` folder, which the IDE has also mounted. That way, you can easily visualise the images produced by Brane in the notebook, by loading them from the filesystem.
+Another common use-case is in combination with the [JupyterLab IDE](https://github.com/braneframework/brane-ide). Your Brane packages can write results or even plots to the shared `/data` folder, which the IDE has also mounted. That way, you can easily visualise the images produced by Brane in the notebook, by loading them from the filesystem.
 
 If you're interested in other types of Brane packages, you can follow the [next tutorial](./github.md). Otherwise, you can refer to the [Scientists](../scientists/introduction.md)-chapters to learn how to write workflows for Brane, or go to the [BraneScript](../branescript/introduction.md) documentation to learn more about Brane's DSL.

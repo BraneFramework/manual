@@ -3,7 +3,7 @@ In the [previous chapter](./hello-world.md), you created your first package, and
 
 However, this makes for very boring workflows. Thus, in this chapter, we will extend upon this by creating a container with multiple functions, and where we can pass inputs to those functions. Concretely, we will describe how to implement a _base64_ package, which will contain a function to encode a string and decode a string to and from [Base64](https://en.wikipedia.org/wiki/Base64), respectively.
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/base64` of the [repository](https://github.com/epi-project/brane).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/base64` of the [repository](https://github.com/braneframework/brane).
 
 
 ## 1. Writing code
@@ -403,7 +403,7 @@ actions:
       type: string
 ```
 
-The complete `container.yml` may be found in the [project repository](https://github.com/epi-project/brane) (`examples/doc/base64/container.yml`).
+The complete `container.yml` may be found in the [project repository](https://github.com/braneframework/brane) (`examples/doc/base64/container.yml`).
 
 
 # 3. Building & Publishing the package
@@ -411,12 +411,12 @@ If you've done everything right, this will be exactly the same as with the previ
 
 First, we will build the package:
 ```bash
-brane build ./container.yml
+brane package build ./container.yml
 ```
 
-Once that's ready, test your package by running `brane test`:
+Once that's ready, test your package by running `brane package test`:
 ```bash
-brane test base64
+brane package test base64
 ```
 
 If you test your encode function and then your decode function, you should get something along the lines of:
@@ -425,13 +425,13 @@ If you test your encode function and then your decode function, you should get s
 
 Once you've verified everything works, we will push it to the remote repository:
 ```bash
-brane push base64
+brane package push base64
 ```
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> If you get errors saying that you haven't logged-in yet (or perhaps errors saying a file is missing), login first with `brane login`. Refer to the [previous tutorial](./hello-world.md#5-publishing-your-package) for more details.
 
 And then, like before, we can use the REPL to interact with our package:
 ```bash
-brane repl --remote http://<IP>:50053
+brane workflow repl --remote http://<IP>:50053
 ```
 
 For example, you can now do the following:

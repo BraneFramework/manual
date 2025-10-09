@@ -3,7 +3,7 @@ In this chapter, we will discuss how to install the Brane Command-Line Tool, or 
 
 If you already have this executable available, you can [skip ahead](./packages.md) to the next chapter instead. If you do not, you should begin with the next chapter.
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Aside from the `brane` executable, you may make your life easier by installing the Brane JupyterLab environment; check out its [repository](https://github.com/epi-project/brane-ide).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Aside from the `brane` executable, you may make your life easier by installing the Brane JupyterLab environment; check out its [repository](https://github.com/braneframework/brane-ide).
 
 
 ## Prerequisites
@@ -26,7 +26,7 @@ Before you can write and test workflows on your machine, make sure that you inst
 ## Downloading the binaries
 The easiest way to install the `brane`-executable is by downloading it from the project's repository.
 
-Head to https://github.com/epi-project/brane/releases/latest/ to find the latest release. From there, you can download the appropriate `brane` executable by clicking on the desired entry in the `Assets`-list:
+Head to https://github.com/braneframework/brane/releases/latest/ to find the latest release. From there, you can download the appropriate `brane` executable by clicking on the desired entry in the `Assets`-list:
 
 <img src="../assets/img/repository-release-assets.png" alt="Successfully built version 1.0.0 of container (ECU) package hello_world." width=1000/>
 

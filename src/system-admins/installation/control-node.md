@@ -102,14 +102,6 @@ The `-f` flag will make sure that any of the missing directories (e.g., `config/
 
 Once again, you can change many of the properties in the `node.yml` file by specifying additional command-line options (see the [`branectl` documentation](TODO) or the builtin `branectl generate node --help`) or by changing the file manually (see the [`node.yml` documentation](../../config/admins/node.md)).
 
-> <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Due to a  [bug](https://github.com/epi-project/brane/issues/27) in one of the framework's dependencies, it cannot handle certificates on IP addresses. To workaround this issue, the `-H` option is provided; it can be used to specify a certain hostname/IP mapping for this node only. Example:
-> ```bash
-> # We can address '192.0.2.2' with 'bob-domain' now
-> branectl generate node -f -H bob-domain:192.0.2.2 central central-domain.com
-> ```
-> Note that this is local to this domain only; you have to specify this on other nodes as well. For more information, see the [`node.yml` documentation](../../config/admins/node.md).
-> > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Since the above is highly localized, it can be abused to do node-specific routing, by assigning the same hostname to different IPs on different machines. Definitely entering "hacky" territory here, though...
-
 
 ## Adding certificates
 Before the framework can be fully used, the central node will need the public certificates of the worker nodes to be able to verify their identity during connection. Since we assume Brane may be running in a decentralized and shielded environment, the easiest is to add the domain's certificates to the `config/certs` directory.
