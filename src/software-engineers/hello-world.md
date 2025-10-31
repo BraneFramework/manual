@@ -269,7 +269,7 @@ No, it didn't! Remember, Brane never simply shows the user the stdout of the pac
 
 Congratulations! You have now written, built, tested, published and then executed your first Brane package.
 
-// TODO: Replace pic above here with one that uses println
+<!-- TODO: Replace pic above here with one that uses println -->
 
 ## Next
 
