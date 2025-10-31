@@ -1,0 +1,17 @@
+---
+config:
+  default: true
+
+  MD013: false
+  MD028: false
+  MD033: false
+
+# MD013
+
+# line_length: 120   # Allow lines up to 120 characters
+
+# heading_line_length: 120
+
+# code_block_line_length: 120
+
+# tables: false      # Don't enforce for tables

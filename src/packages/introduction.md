@@ -1,11 +1,13 @@
 # Introduction
+
 In this chapter, we will provide a brief overview of the different packages that Brane supports.
 
-
 ## Overview
+
 To provide an as versatile and easy-to-use interface as possible, Brane has different ways of defining packages. Apart from just being able to execute arbitrary code, it also supports perform requests according to the [OpenAPI](https://www.openapis.org/) standard and (in the future) supports publishing [Common Workflow Language](https://www.commonwl.org/) workflows as packages as well.
 
 Concretely, the different types that are supported are:
+
 - Executable Code Unit (`ecu`) packages are containers containing arbitrary code that is run via the `branelet` wrapper.
 - OpenAPI Standard (`oas`) packages are packages that make API requests defined in the OpenAPI format. It is, once again, the `branelet` executable that performs these calls.
 
