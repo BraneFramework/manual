@@ -15,10 +15,10 @@ Before you can begin, there is also some extra terminology that will be used thr
 
 
 ### The Brane instance
-Looked at from the highest level of abstraction, Brane has a client part (in the form of a command-line tool or a [Jupyter notebook](https://jupyter.org/)) and a server part. The first is referred to as a **Brane client**, while the latter is referred to as the **Brane instance**.
+Looked at from the highest level of abstraction, Brane has a client part (in the form of a command-line tool) and a server part. The first is referred to as a **Brane client**, while the latter is referred to as the **Brane instance**.
 
 
 ## Where next
 To continue reading, we suggest you start at the first chapter for your role. You can select it in the sidebar to the left.
 
-If you are part of the fifth, "hidden" role (the Brane administrators), you have [your own book](/admins); we recommend you continue there. It also details how to obtain, compile and run the framework for testing purposes.
+If you are a brane-developer and want to know more about the inner workings of Brane, we recommend you checkout the [Brane: A Specification](/specification) book. That details the framework's inner workings.

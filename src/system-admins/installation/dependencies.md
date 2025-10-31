@@ -1,10 +1,6 @@
 # Dependencies
 The first step to install any piece of software is to install its dependencies.
 
-The next section will discuss the runtime dependencies. If you plan to compile the framework instead of downloading the prebuilt executables, you must install _both_ the dependencies in the [Runtime dependencies](#runtime-dependencies)- and [Compilation dependencies](#compilation-dependencies) sections.
-
-
-## Runtime dependencies
 In all Brane node types, the Brane services are implemented as containers, which means that the number of runtime dependencies is relatively few.
 
 However, the following dependencies are required:
@@ -17,6 +13,7 @@ However, the following dependencies are required:
 
      > <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> This effectively gives power to all non-root users that are part of the `docker`-group to modify any file as if they had root access. Be careful who you include in this group.
 2. Install the [BuildKit plugin](https://docs.docker.com/buildx/working-with-buildx/) for Docker:
+
    ```bash
    # Clone the repo, CD into it and install the plugin
    # NOTE: You will need to install 'make'
@@ -32,20 +29,6 @@ However, the following dependencies are required:
    ```
    If these instructions don't work for you, you can also check the [plugin's repository README](https://github.com/docker/buildx#building) for more installation methods.
    > <img src="../../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Docker Buildx is included by default in most distributions of Docker noawadays. You can just run the `docker buildx install` and `docker buildx create --use` functions first, and if they work, skip the top ones.
-3. Install [OpenSSL](https://www.openssl.org/) for the `branectl` executable:
-   - Ubuntu / Debian:
-     ```bash
-     sudo apt-get install openssl
-     ```
-   - Arch Linux:
-     ```bash
-     sudo pacman -Syu openssl
-     ```
-   - macOS:
-     ```zsh
-     # We assume you installed Homebrew (https://brew.sh/)
-     brew install openssl
-     ```
 
 Aside from that, you have to make sure that your system can run executables compiled against GLIBC 2.27 or higher. You can verify this by running:
 ```bash

@@ -1,8 +1,6 @@
 # Introduction
 In this series of chapters, we will discuss the role of system administrators and how they may prepare their system for Brane. The chapters will talk about what the requirements are on their system and what kind of information they are expected to share with the Brane instance. Finally, we will also discuss defining datasets.
 
-To know more about the inner workings of Brane, we recommend you checkout the [Brane: A Specification](/specification) book. That details the framework's inner workings.
-
 
 ## Background & Terminology
 The Brane instance defines a _control node_ (or _central node_), which is where the orchestrator itself and associated services run. This node is run by the _Brane administrators_. Then, as a counterpart to this control node, there is the _worker plane_, which is composed of all the different compute sites that Brane orchestrates over. Each such compute site is referred to as a _domain_, a _location_ or, since Brane treats them as a single entity, a _worker node_. Multiple worker nodes may exist per physical domain (e.g., a single hospital can have multiple domains for different tasks), but Brane will treat these as conceptually different places.
@@ -34,15 +32,17 @@ The _delegate_ itself consists of a few services. Their exact working is detaill
 - Finally, the local node also has _proxy service_, just like the [central node](#the-central-node).
 
 As for the compute backend, Brane is designed to connect to different types. An overview:
-{{#include ./backends/overview.md}}
+- A _local_ backend schedules new jobs on the same [Docker](https://docker.com) engine where the control plane of Brane runs. This is the simplest infrastructure of them all, and requires no other preparation than required when installing the control plane. This is typically the choice of backend when the worker node is running on a single server or VM.
+<!-- - A _VM_ backend uses an SSH connection (via the [Xenon](https://github.com/xenon-middleware/xenon) middleware) to launch jobs on the Docker engine of another server or VM. This is typically useful for simple setups that still emphasise a split between a local control plane and a local compute plane, but don't have extensive clusters to connect to.  -->
+<!-- - A _Kubernetes_ backend connects to a [Kubernetes](https://kubernetes.io) cluster on which incoming jobs are hosted. This is the recommended large-scale compute option if you need large amounts of compute power, since Kubernetes is designed to natively work with containers. -->
+<!-- - A _Slurm_ backend connects to a [Slurm](https://www.schedmd.com/) cluster on which incoming jobs are hosted. This infrastructure type may be harder to setup, as Slurm does not have any builtin container support. However, when setup properly, it can be used to connect to existing large-scale compute clusters to execute Brane jobs on. -->
+- A custom backend. Brane used to have multiple backends, but they are currently deprecated. We aim to add them back as Brane matures.
 
-More information on each backend and how to set it up is discussed in the [backends chapter(s)](./backends/introduction.md).
+If you need a different backend Brane should have the required plumbing to add a new backend. For details on how to implement a different backend you probably are interested in the [Code Documentation](/brane) or the [Specification](/specification)
 
 
 ## Next
 To start setting up your own worker node, we recommend checking out the [installation chapters](./installation/introduction.md). These will walk you through everything you need to setup a node, both control nodes and worker nodes.
-
-For information on setting up different backends, check the [backend chapters](./backends/introduction.md).
 
 Alternatively, if you are looking for extensive documentation on the Brane configuration files relevant to a worker node, checkout the [documentation chapters](./docs/overview.md).
 
