@@ -1,16 +1,17 @@
 # Overview
+
 In this chapter, we will provide a brief overview of what the framework is, how it is build and what kind of features it supports.
 
 It is not, however, a complete, technical description of its implementation; for that, we recommend you read our [other book](/specification).
 
-
 ## Brane: Programmable Orchestration of Applications and Networking
+
 Regardless of the context and rationale, running distributed applications on geographically dispersed IT resources often comes with various technical and organizational challenges. If not addressed appropriately, these challenges may impede development, and in turn, scientific and business innovation. We have designed and developed Brane to support implementers in addressing these challenges. Brane makes use of containerization to encapsulate functionalities as portable building blocks. Through programmability, application orchestration can be expressed using intuitive domain-specific languages. As a result, end-users with limited or no programming experience are empowered to compose applications by themselves, without having to deal with the underlying technical details.
 
 In context of the [EPI project](https://enablingpersonalizedinterventions.nl), Brane is extended to orchestrate data distribution as well. Because the project concerns itself with health data, this orchestration does not just include distributing the data, but also policing access and making sure that applications adhere to both global and local data access policies. The same applies to the network orchestration of Brane; here, too, we have to make sure that secure and policy-appliant networking between different sites is possible and automated by Brane.
 
-
 ## The framework in a nutshell
+
 Concretely, the Brane framework is primarily designed to take an application in the form of a _workflow_ and perform the work specified in it over multiple nodes spread over multiple domains, to which we refer as _compute sites_. This basic idea is shown in figure 1.
 
 ![An image showing the abstraction the Brane framework provides over multiple compute sites](./assets/img/abstraction.svg)
