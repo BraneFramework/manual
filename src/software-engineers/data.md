@@ -4,7 +4,7 @@ The you have followed the previous two tutorials ([here](./hello-world.md) and [
 
 However, so far, your code will not be very usable to data scientists. That's because a key ingredient is missing: datasets, and especially large ones.
 
-In this tutorial, we will cover exactly that: how you can define a (local) dataset and use it in your package. This is illustrated by creating a package that can compute the minimum or maximum of a given file. First, however, we will provide a little background on how datasets are represented, and what's the difference between Brane's concept of _data_ and Brane's concept of _intermediate results_. If you're eager and already know this stuff, you can skip ahead to the [section after the next one](#1-writing-code).
+In this tutorial, we will cover exactly that: how you can define a (local) dataset and use it in your package. This is illustrated by creating a package that can compute the minimum or maximum of a given file. First, however, we will provide a little background on how datasets are represented, and what's the difference between Brane's concept of _data_ and Brane's concept of _intermediate results_. If you're eager and already know this stuff, you can [skip ahead](#3-writing-code).
 
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> The code used in this tutorial can be found in `examples/doc/minmax` of the [repository](https://github.com/braneframework/brane).
 
@@ -59,7 +59,7 @@ access:
 
 This will tell Brane out of which file(s) this dataset consists, and by which identifier it is known. The identifier is arbitrary, but should be unique across your local machine. We will assume `numbers`.
 
-> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> To package multiple files in a dataset, simply create a folder and refer to that in your `data.yml` file. Be aware, though, that this adds additional uniqueness to your dataset; see [below](#1-writing-code).
+> <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> To package multiple files in a dataset, simply create a folder and refer to that in your `data.yml` file. Be aware, though, that this adds additional uniqueness to your dataset; see [below](#3-writing-code).
 
 Then you can build the dataset by running:
 
@@ -210,7 +210,7 @@ But what is passed exactly? This is a very case-specific answer, since Brane ass
 
 > <img src="../assets/img/info.png" alt="info" width="16" style="margin-top: 3px; margin-bottom: -3px"/> In the future, it is likely that BraneScript will be extended to have a concept of _Dataset types_ which exactly defines what kind of dataset is allowed to be passed to a function. However, until that time, the best you can do is simply error at runtime if the dataset is of invalid format.
 
-For the tutorial, however, we can commit ourselves to the `numbers` dataset only. This is of kind `file` (see [above](#0-creating-a-dataset)), which means that Brane will do two things when it passes it to your package:
+For the tutorial, however, we can commit ourselves to the `numbers` dataset only. This is of kind `file` (see [above](#1-creating-a-dataset)), which means that Brane will do two things when it passes it to your package:
 
 1. Before the container with your package is launched, the dataset's referenced file (or folder) will be available under _some_ path (in practise, this is typically a folder nested in the `/data` directory in the container).
 2. It will pass the path of the dataset's file (or folder) to you as a _string_. This is the value passed in the `FILE` argument.

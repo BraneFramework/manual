@@ -2,7 +2,7 @@
 
 In Brane, the role of a scientist is to write _workflows_: high-level descriptions of some algorithm or other program that implements some goal. They are high-level by the fact that Brane will try to handle tedious stuff such as choosing the best location for each task, moving around datasets or even applying optimisations.
 
-In this chapter, we describe the basics about writing workflow. Specifically, we will discuss how to write a workflow to run the `hello_world` package and print its output ([first section](#writing-a-workflow)), as well as how to run it or submit it to a remote instance ([second section](#running-a-workflow)). Finally, we also briefly discuss the Read-Eval-Print Loop (REPL), that provides a more interactive way of running workflows ([last section](#the-repl-and-the-notebook)).
+In this chapter, we describe the basics about writing workflow. Specifically, we will discuss how to write a workflow to run the `hello_world` package and print its output ([first section](#writing-a-workflow)), as well as how to run it or submit it to a remote instance ([second section](#running-a-workflow)). Finally, we also briefly discuss the Read-Eval-Print Loop (REPL), that provides a more interactive way of running workflows ([last section](#the-repl)).
 
 ## Writing a workflow
 

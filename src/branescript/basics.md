@@ -20,7 +20,7 @@ So, how can we use this? The first step is to declare a new variable, to make Br
 let <ID> := <EXPR>;
 ```
 
-where `<ID>` is some identifier that you want to use for your variable (existing only of alphanumeric characters and an underscore, `_`), and `<EXPR>` is some code that _evaluates_ to a certain value. We've already seen an example of this: a function call is an expression, since it has a return value that we can pass to other functions or statements. Other expressions include _literal values_ (e.g., `true`, `42`, `3.14` or `"Hello, there!"`) or logical or mathmatical operations (e.g., addition, subtraction, logical conjunction, comparison, etc). For some more examples, see [below](#arrays), or check the [BraneScript documentation](../../branescript/expressions.md) for a full overview.
+where `<ID>` is some identifier that you want to use for your variable (existing only of alphanumeric characters and an underscore, `_`), and `<EXPR>` is some code that _evaluates_ to a certain value. We've already seen an example of this: a function call is an expression, since it has a return value that we can pass to other functions or statements. Other expressions include _literal values_ (e.g., `true`, `42`, `3.14` or `"Hello, there!"`) or logical or mathmatical operations (e.g., addition, subtraction, logical conjunction, comparison, etc). For some more examples, see [below](./funcs-classes.md#arrays), or check the [BraneScript documentation](../../branescript/expressions.md) for a full overview.
 
 Yet another example of an expression is a _variable reference_, which effectively reads a particular variable. To use it, simply specify the identifier of the variable you declared (`ID`) any time you can use an expression. For example:
 

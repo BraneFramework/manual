@@ -45,7 +45,7 @@ The top line of the rest will show you the GLIBC version installed on your machi
 
 <img src="../../assets/img/glibc-version.png" alt="The top line of the result of running 'ldd --version'" width="600" />
 
-If you do not meet this requirement, you will have to compile `branectl` (and any other non-containerized binaries) yourself on a machine with that version of GLIBC installed or lower. In that case, also install the [compilation dependencies](#compilation-dependencies).
+If you do not meet this requirement, you will have to compile `branectl` (and any other non-containerized binaries) yourself on a machine with that version of GLIBC installed or lower. Instruction on how to compile Brane can be found in the [specification](/specification/development/compilation.html)
 
 ## Next
 

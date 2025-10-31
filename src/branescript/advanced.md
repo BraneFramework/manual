@@ -65,7 +65,7 @@ println(len([ 0, 0, 0 ]));
 // Will print 3
 ```
 
-This is very useful when iterating over an array with a for-loop (see [below](#for-loop)).
+This is very useful when iterating over an array with a for-loop (see [below](./basics.md#for-loop)).
 
 ### Returning
 
@@ -77,7 +77,7 @@ The syntax is:
 return;
 ```
 
-Writing this statement can be thought as a 'stop' or 'exit' command, and any statement following it (if not in a [branch](#if-statements)) can be ignored.
+Writing this statement can be thought as a 'stop' or 'exit' command, and any statement following it (if not in a [branch](./basics.md#if-statements)) can be ignored.
 
 There are two possible ways to use a return statement:
 
@@ -173,8 +173,8 @@ Note that there are a few peculiarities about parallel statements:
   println(jedis);
   ```
 
-  Will actually print [an array](#arrays) with the returned strings.
-  > <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Note that the undefined order of execution, the order of the array is also undefined; it is first-come first-serve, so it typically only makes sense to process these array using some loop (e.g., a [for-loop](#for-loop)).
+  Will actually print [an array](./funcs-classes.md#arrays) with the returned strings.
+  > <img src="../../assets/img/warning.png" alt="warning" width="16" style="margin-top: 3px; margin-bottom: -3px"/> Note that the undefined order of execution, the order of the array is also undefined; it is first-come first-serve, so it typically only makes sense to process these array using some loop (e.g., a [for-loop](./basics.md#for-loop)).
 - Finally, as a variation on returning an array, multiple _merge strategies_ exist to do different things with the result. For example, one such strategy is the `sum`-strategy, that simply adds the results returned by the parallel-statement. The syntax to define it is:
 
   ```bscript
