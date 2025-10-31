@@ -241,7 +241,7 @@ For now, we will restrict ourselves to testing our package.
 
 First, we will bring the function that we have defined in our package into scope, by _importing_ the package:
 
-```
+```branescript
 import hello_world;
 ```
 
@@ -251,7 +251,7 @@ If the instance was able to find the package, then the command will return witho
 
 Next, you can call the function to run your package on the instance:
 
-```
+```branescript
 hello_world();
 ```
 

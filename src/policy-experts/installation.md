@@ -70,7 +70,7 @@ npx parcel
 
 in one to launch the HTML client, and
 
-```
+```bash
 cargo run
 ```
 
@@ -93,7 +93,7 @@ To download, you simply go to the [release](https://github.com/braneframework/br
 
 To compile the binary yourself, install [GCC's `gcc` and `g++`](https://gcc.gnu.org/), [CMake](https://cmake.org/) and [Rust](https://rust-lang.org) ([rustup](https://rustup.rs) is usually the easiest) first if you haven't already. Then, clone the repository and run the `make.py` script:
 
-```
+```bash
 git clone https://github.com/braneframework/brane && cd ./brane
 cargo xtask build brane-ctl
 ```

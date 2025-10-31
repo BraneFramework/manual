@@ -28,9 +28,8 @@ As an example repository, we will use the [brane-std](https://github.com/branefr
 
 Before we can install a package from a repository, first we have to find the identifier of the repository. This identifier is written as the GitHub user or organisation name, a slash, and then the name of the repository. Or, more precisely, the identifier is the part of the URL of a repository that comes after `https://github.com/`. For example, for the standard library, which can be found at <https://github.com/braneframework/braneframework/brane-std>
 
-```
-
 To download a package and install it locally, you can use the following command:
+
 ```bash
 brane package import <REPO> <FILE>
 ```

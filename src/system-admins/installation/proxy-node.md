@@ -64,7 +64,7 @@ Then we will generate the `node.yml` file. This file is done last, because it it
 
 When generating this file, it is possible to manually specify where to find each of those files. However, in practise, it is more convenient to make sure that the files are at the default locations that the tools expects. The following tree structure displays the default locations for the configuration of a proxy node:
 
-```
+```text
 <current dir>
 ├ config
 │ ├ certs

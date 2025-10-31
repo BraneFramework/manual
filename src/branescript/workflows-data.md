@@ -159,7 +159,7 @@ The process of creating a dataset is threefold:
 
 The first step is pretty straightforward. For our tutorial, you should create a file and populate it with the following toy contents:
 
-```
+```csv
 name,red,green,blue
 red,255,0,0
 green,0,255,0
