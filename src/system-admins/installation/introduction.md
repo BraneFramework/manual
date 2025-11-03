@@ -1,4 +1,5 @@
 # Introduction
+
 In these chapters, we will walk you through installing a node in the Brane instance.
 
 There are three types of nodes: a _central node_ (or _control node_), a _worker node_ and a _proxy node_ (see the generic [introduction](../introduction.md) chapter for more information). These series of chapters will discuss how to install both of them.
